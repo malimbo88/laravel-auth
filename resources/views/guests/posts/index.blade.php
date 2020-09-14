@@ -1,4 +1,4 @@
-{{-- View admin index.blade.php --}}
+{{-- View guests index.blade.php --}}
 
 {{-- Layouts app.blade.php --}}
 @extends("layouts.app")
@@ -8,7 +8,6 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <span>Hello</span><span> {{ $user->name }}, </span>
         <h2>Your Posts List</h2>
         <br>
 
@@ -18,13 +17,8 @@
 
             {{-- Single post --}}
             <li>
-              <a href="{{ route("admin.posts.show", $post) }}">
-                <h3>{{ $post->title }}</h3>
-              </a>
-              <br>
-              <span>User: {{ $user->name }}.</span>
+              <h3>{{ $post->title }}</h3>
               <p>{{ $post->content }}</p>
-              <br>
               <hr>
             </li>
             {{-- end Single post --}}
