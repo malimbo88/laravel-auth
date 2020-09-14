@@ -18,13 +18,16 @@ class CreatePostsTable extends Migration
             $table->id();
 
             // Foreign key User_id
-            $table->unsignedBigInteger("user_id")
+            $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")
-                  ->refernces("id")
+                  ->references("id")
                   ->on("users");
 
             // Title
             $table->string("title");
+
+            // Image Path
+            $table->text("image_path");
 
             // Content
             $table->longText("content");
