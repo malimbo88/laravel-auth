@@ -14,7 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        // All data from model class
+        $posts = Post::all();
+
+        return view();
     }
 
     /**
