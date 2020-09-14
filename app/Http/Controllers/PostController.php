@@ -20,4 +20,10 @@ class PostController extends Controller
       // Return to view
       return view("guests.posts.index", compact("posts"));
     }
+
+    public function show(Post $post) {
+
+      // Return to view
+      return view("guests.posts.show", compact("post", compact("post")));
+    }
 }

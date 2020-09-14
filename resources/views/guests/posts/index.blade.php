@@ -17,7 +17,9 @@
 
             {{-- Single post --}}
             <li>
-              <h3>{{ $post->title }}</h3>
+              <a href="{{ route("posts.show", $post) }}">
+                <h3>{{ $post->title }}</h3>
+              </a>
               <p>{{ $post->content }}</p>
               <hr>
             </li>
