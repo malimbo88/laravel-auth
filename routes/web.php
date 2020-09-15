@@ -32,5 +32,8 @@ Route::prefix("admin")
 });
 
 // Public
-// Route PostController
-Route::get("posts", "PostController@index")->name("posts");
+// Route PostController index
+Route::get("posts", "PostController@index")->name("posts_index");
+
+// // Route PostController index
+// Route::get("posts/{post}", "PostController@show")->name("posts_show");

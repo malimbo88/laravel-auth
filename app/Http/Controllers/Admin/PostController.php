@@ -5,8 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+// Use Auth class
+use Illuminate\Support\Facades\Auth;
+
 // Use Post class model
 use App\Post;
+
+// Use User class model
+use App\User;
 
 class PostController extends Controller
 {
@@ -17,9 +23,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        // All data from Post class model
+        // Data from class
         $posts = Post::all();
-        dd($posts);
+        $user = Auth::user();
+
+        // Return to view
+        return view("admin.posts.index", compact("posts", "user"));
     }
 
     /**
@@ -49,9 +58,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        // Return to view
+        return view("admin.posts.show", compact("post"));
     }
 
     /**
