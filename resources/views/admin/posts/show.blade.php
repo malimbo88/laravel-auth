@@ -40,6 +40,14 @@
           </div>
           {{-- end User infos show --}}
 
+          {{-- Route to index --}}
+          <div class="route">
+            <a href="{{ route("admin_posts.index") }}">
+              <h5>To index</h5>
+            </a>
+          </div>
+          {{-- end Route to index --}}
+
         </div>
       </div>
     </div>

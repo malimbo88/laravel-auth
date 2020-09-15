@@ -38,7 +38,9 @@
 
                   {{-- Post title --}}
                   <li>
-                    <h3>{{ $post->title }}</h3>
+                    <a href="{{ route("admin_posts.show", $post) }}">
+                      <h3>{{ $post->title }}</h3>
+                    </a>
                   </li>
                   {{-- Post title --}}
 
