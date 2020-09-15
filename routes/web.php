@@ -20,3 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Admin
+// Route Admin/PostController
+Route::prefix("admin")
+  ->namespace("Admin")
+  ->middleware("auth")
+  ->name("admin_")
+  ->group(function() {
+      Route::resource("posts", "PostController");
+});
+
+// Public
+// Route PostController
+Route::get("posts", "PostController@index")->name("posts");
