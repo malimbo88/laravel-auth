@@ -21,6 +21,17 @@
 
           {{-- Post show --}}
           <div class="show_post">
+
+            {{-- If image_path is not empty.. --}}
+            @if (!empty($post->image_path))
+              <div class="post_image">
+                <img src="{{ asset("storage" . "/" . $post->image_path) }}" alt="{{ $post->title }}">
+              </div>
+            @endif
+            {{-- end If image_path is not empty.. --}}
+
+            <br>
+
             <div class="post_content">
               <p>{{ $post->content }}</p>
             </div>

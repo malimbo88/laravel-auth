@@ -56,12 +56,21 @@ class PostController extends Controller
           // All data from $request
           $data = $request->all();
 
+          // Upload file image
+          $path = $request->file("image_path")->store("images", "public");
+
           // Create new istance/database row
           $new_post = new Post();
           $new_post->user_id = Auth::id();
           $new_post->title = $data["title"];
+          $new_post->image_path = $path;
           $new_post->content = $data["content"];
 
+          // Save data
+          $new_post->save();
+
+          // Redirect to view
+          return redirect()->route("admin_posts.show", $new_post);
         }
     }
 
