@@ -12,9 +12,18 @@ class PostController extends Controller
     // Methods
     // Method index
     public function index() {
-      
-      // All data from Post class model
+
+      // All data from class
       $posts = Post::all();
-      dd($posts);
+
+      // Return to view
+      return view("guests.posts.index", compact("posts"));
+    }
+
+    // Method show
+    public function show(Post $post) {
+
+      // Return to view
+      return view("guests.posts.show", compact("post"));
     }
 }
