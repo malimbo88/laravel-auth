@@ -37,7 +37,7 @@
 
                   {{-- Post title --}}
                   <li>
-                    <a href="{{ route("guests_show", $post) }}">
+                    <a href="{{ route("guests_posts_show", $post) }}">
                       <h3>{{ $post->title }}</h3>
                     </a>
                   </li>

@@ -44,6 +44,16 @@
                   </li>
                   {{-- Post title --}}
 
+                  <br>
+
+                  {{-- Post title --}}
+                  <li>
+                    <a href="{{ route("admin_posts.create") }}">
+                      <span>Create new post</span>
+                    </a>
+                  </li>
+                  {{-- Post title --}}
+
                 </ul>
               </li>
               {{-- end Post infos --}}

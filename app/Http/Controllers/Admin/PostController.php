@@ -38,7 +38,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        // Return to view
+        return view("admin.posts.create");
     }
 
     /**
@@ -49,7 +50,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // If Authenticated..
+        if(Auth::check()) {
+
+          // All data from $request
+          $data = $request->all();
+
+          // Create new istance/database row
+          $new_post = new Post();
+          $new_post->user_id = Auth::id();
+          $new_post->title = $data["title"];
+          $new_post->content = $data["content"];
+
+        }
     }
 
     /**

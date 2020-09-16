@@ -33,7 +33,7 @@ Route::prefix("admin")
 
 // Public
 // Route PostController index
-Route::get("posts", "PostController@index")->name("guests_index");
+Route::get("posts", "PostController@index")->name("guests_posts_index");
 
 // Route PostController index
-Route::get("posts/{post}", "PostController@show")->name("guests_show");
+Route::get("posts/{post}", "PostController@show")->name("guests_posts_show");

@@ -37,7 +37,7 @@
 
           {{-- Route to index --}}
           <div class="route">
-            <a href="{{ route("guests_index") }}">
+            <a href="{{ route("guests_posts_index") }}">
               <h5>To index</h5>
             </a>
           </div>
